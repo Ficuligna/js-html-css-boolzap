@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  <head>
+    <!-- dato che si tratta di whatsappweb non mi preoccupo del meta che gestisce il viewport in mobile :) -->
+    <meta charset="utf-8">
+    <title>Boolzapp</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://use.fontawesome.com/aba854a051.js"></script>
+  </head>
+  <body>
+    <div class="container">
+    <div class="backgroundheadergreen">
+
+    </div>
+    <section id="Boolzapp">
+      <header>
+        <!-- altezza fissa 70 px -->
+        <div class="left-header">
+          <div class="userAccount">
+            <div class="imgaccount">
+              <img src="img/userimg.jpg" alt="">
+            </div>
+          </div>
+          <div class="interaction">
+            <i class="fa fa-circle-o-notch" aria-hidden="true"></i>
+            <i class="fa fa-comment" aria-hidden="true"></i>
+            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+
+          </div>
+
+        </div>
+        <div class="right-header">
+          <div class="friendAccount">
+            <div class="imgaccount">
+              <img src="img/friendoneimg.jpg" alt="">
+            </div>
+            <div class="textSide">
+              <h3>"Friendonename"</h3>
+              <p>Ultimo accesso alle ore ---> </p> <p>"da inserire dainaimicalli"</p>
+            </div>
+          </div>
+          <div class="interaction">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <i class="fa fa-paperclip" aria-hidden="true"></i>
+            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+          </div>
+
+        </div>
+      </header>
+      <main>
+        <!-- sezione dedicata alle chat ASIDE -->
+        <aside id="chats">
+          <div class="notifications">
+            <div class="bellimg">
+              <i class="fa fa-bell-slash" aria-hidden="true"></i>
+            </div>
+            <div class="textSide">
+              <p>Ricevi notifiche di nuovi messaggi</p>
+              <a href="#">Attiva notifiche desktop</a>
+            </div>
+          </div>
+          <div class="search">
+            <div class="searchbar">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <input type="text" name="" placeholder="Cerca o inizia una nuova chat">
+            </div>
+          </div>
+          <div class="listChat">
+            <div class="chat active">
+              <div class="imgaccount">
+                <img src="img/friendoneimg.jpg" alt="">
+              </div>
+              <div class="textSide">
+                <h2>"Friendonename"</h2>
+                <p>last message</p>
+                <p>time last message</p>
+              </div>
+            </div>
+            <div class="chat">
+              <div class="imgaccount">
+                <img src="img/friendoneimg.jpg" alt="">
+              </div>
+              <div class="textSide">
+                <h2>"Friendonename"</h2>
+                <p>last message</p>
+                <p>time last message</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <!-- sezione principale dove verrà svolta la chat -->
+        <section id="central">
+          <div class="chatActive">
+            <div class="containermessage userMessage">
+              <div class="message">
+                <p>Ciao Friendonename</p>
+              </div>
+            </div>
+            <div class="containermessage friendMessage">
+              <div class="message">
+                <p>Ciao Username</p>
+              </div>
+            </div>
+            <div class="containermessage friendMessage">
+              <div class="message">
+                <p>Ciao Username</p>
+              </div>
+            </div>
+          </div>
+          <div class="sendMessage">
+            <!-- altezza fissa 70 -->
+            <div class="emoj">
+              <i class="fa fa-smile-o" aria-hidden="true"></i>
+            </div>
+            <input name="name" placeholder="Scrivi nuovo messaggio"></input>
+            <div class="SendOrRec">
+              <i class="fa fa-microphone" aria-hidden="true"></i>
+            </div>
+        </section>
+
+      </main>
+
+    </section>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascript/main.js">
+    </script>
+  </body>
+</html>

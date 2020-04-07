@@ -1,0 +1,201 @@
+/* Generali ************************************* */
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d2dbdc;
+  height: 100vh;
+  width: 100vw;
+}
+.backgroundheadergreen{
+  height: 15%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #009688;
+}
+#Boolzapp{
+  height: 95%;
+  width: 80%;
+  min-width: 900px;
+  z-index: 1;
+}
+.imgaccount{
+  height: 60px;
+  /* l'altezza sarà 90% */
+  /* la larghezza glie la darò dinamicamente tramite js e sarà uguale all'altezza*/
+  width: 60px;
+  border-radius: 100%;
+  overflow: hidden
+}
+.imgaccount img{
+  width: 100%;
+}
+.interaction{
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 26px;
+}
+/* header ************************************* */
+header{
+  height: 70px;
+  background-color: #EAEAEA;
+  display: flex;
+}
+.left-header{
+  width: 34%;
+  border-right: 1px solid rgba(0,0,0,0.1);
+  height: 100%;
+  padding: 5px;
+  display: flex;
+}
+.userAccount{
+  width: 60%;
+}
+.interaction{
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.right-header{
+  height: 100%;
+  width: 66%;
+  padding: 5px;
+  display: flex;
+}
+.friendAccount{
+  display: flex;
+  width: 80%;
+}
+.right-header .interaction{
+  width: 20%;
+}
+.textSide{
+  padding: 5px 5px 5px 20px;
+}
+.textSide p{
+  display: inline-block;
+}
+/*  main *************************************** */
+main{
+  display: flex;
+  height: calc(100% - 70px);
+}
+
+/* aside *************************************** */
+aside{
+  width: 34%;
+  height: 100%;
+  background-color: white;
+}
+.notifications{
+  height: 80px;
+  width: 100%;
+  background-color: #8EDAFC;
+  display: flex;
+  padding: 10px;
+}
+.bellimg{
+  font-size: 25px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 100%;
+  color: #8EDAFC;
+}
+.notifications .textSide{
+  font-size: 18px;
+  width: calc(100% - 60px);
+
+}
+.search{
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  background-color: #F3EEEA;
+}
+.searchbar{
+  background-color: white;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.searchbar .fa-search{
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.3);
+}
+.searchbar input{
+  border: none;
+  width: 80%;
+}
+.listChat{
+  height: calc(100% - 130px);
+  width: 100%;
+  overflow-y: auto;
+}
+.chat{
+  padding: 10px;
+  display: flex;
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.chat:hover{
+  background-color: rgba(0,0,0,0.3)
+}
+/* main section ********************************* */
+#central{
+  width: 66%;
+  background-image: url("../img/sfondo.jpg");
+}
+.chatActive{
+  height: calc(100% - 70px);
+  overflow: auto;
+  padding: 20px;
+}
+.containermessage{
+  display: flex;
+}
+.message{
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+.userMessage{
+  justify-content: flex-end;
+}
+.sendMessage{
+  height: 70px;
+  background-color: #F3EEEA;
+  display: flex;
+  padding: 10px;
+}
+.sendMessage div{
+  width: 50px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
+.fa-smile-o, .fa-microphone{
+  align-self:center;
+}
+.sendMessage input{
+  width: calc(100% - 100px);
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  padding: 10px;
+}
