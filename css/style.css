@@ -42,6 +42,7 @@
   color: rgba(0, 0, 0, 0.3);
   font-size: 26px;
 }
+
 /* header ************************************* */
 header{
   height: 70px;
@@ -167,15 +168,25 @@ aside{
 }
 .containermessage{
   display: flex;
+  margin-bottom: 10px;
+}
+.message p:nth-child(2){
+  font-size: 10px;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
 }
 .message{
+  position: relative;
   background-color: white;
   padding: 20px;
   border-radius: 20px;
-  margin-bottom: 10px;
 }
 .userMessage{
   justify-content: flex-end;
+}
+.userMessage .message{
+  background-color: #D5F9BA;
 }
 .sendMessage{
   height: 70px;
@@ -198,4 +209,7 @@ aside{
   border-radius: 5px;
   box-shadow: none;
   padding: 10px;
+}
+.active{
+  background-color: rgba(0, 0, 0, 0.3);
 }
