@@ -213,3 +213,9 @@ aside{
 .active{
   background-color: rgba(0, 0, 0, 0.3);
 }
+.serchOn{
+  display: flex;
+}
+.searchOf{
+  display: none;
+}
