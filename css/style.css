@@ -161,10 +161,15 @@ aside{
   width: 66%;
   background-image: url("../img/sfondo.jpg");
 }
-.chatActive{
+
+.right-chat{
   height: calc(100% - 70px);
   overflow: auto;
   padding: 20px;
+  display: none;
+}
+.chatactive{
+  display: block;
 }
 .containermessage{
   display: flex;
@@ -181,6 +186,20 @@ aside{
   background-color: white;
   padding: 20px;
   border-radius: 20px;
+}
+.drop{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: none;
+}
+.drop:hover{
+  cursor: pointer;
+}
+.message:hover .drop{
+  display: block;
 }
 .userMessage{
   justify-content: flex-end;
@@ -210,8 +229,31 @@ aside{
   box-shadow: none;
   padding: 10px;
 }
+.mutendina{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: white;
+  width: 120px;
+  display: none;
+}
+.friendMessage .mutendina{
+  position: absolute;
+  top: 10px;
+  left: 90%;
+}
+.mutendina ul {
+  list-style-type: none;
+  line-height: 2;
+  padding: 10px;
+}
+.mutendina li:hover{
+  font-weight: 600;
+  cursor: pointer;
+}
+/* classi utili ******************************** */
 .active{
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 .serchOn{
   display: flex;

@@ -5,7 +5,7 @@ $(document).ready(function(){
     if ($(".sendMessage input").val() != "") {
       $("#SendOrRec").html('<i class="fa fa-paper-plane" aria-hidden="true"></i>');
     }else{
-      $("#SendOrRec").html('<i class="fa fa-microphone" aria-hidden="true"></i>')
+      $("#SendOrRec").html('<i class="fa fa-microphone" aria-hidden="true"></i>');
     }
   })
   $("#SendOrRec").click(function(){
@@ -14,12 +14,14 @@ $(document).ready(function(){
     if (minuti < 10) {
       minuti = "0" + minuti
     }
+    var miseccaricopiare = '<div class="drop"><i class="fa fa-sort-desc" aria-hidden="true"></i></div>';
+    var miseccaricopiare2 = '<div class="mutendina"><ul><li>info message</li><li>delete message</li></ul></div>';
     var messageTime = time.getHours() + ":" + minuti
     var newMessage = $(".sendMessage input").val();
     if ($(".sendMessage input").val() != "") {
-      $(".chatActive").append('<div class="containermessage userMessage"><div class="message"><p>' + newMessage + '</p><p>'+ messageTime + '</p></div></div>');
+      $(".right-chat.chatactive").append('<div class="containermessage userMessage"><div class="message"><p>' + newMessage + '</p><p>'+ messageTime + '</p>'+ miseccaricopiare + miseccaricopiare2 +'</div></div>');
       setTimeout(function(){          //aggiunta reazione automatica
-        $(".chatActive").append('<div class="containermessage friendMessage"><div class="message"><p> ok </p><p>'+ messageTime + '</p></div></div>');
+        $(".right-chat.chatactive").append('<div class="containermessage friendMessage"><div class="message"><p> ok </p><p>'+ messageTime + '</p>' + miseccaricopiare + miseccaricopiare2 +'</div></div>');
       },1000);
       $("#SendOrRec").html('<i class="fa fa-microphone" aria-hidden="true"></i>')
       newMessage = "";
@@ -32,12 +34,15 @@ $(document).ready(function(){
     if (minuti < 10) {
       minuti = "0" + minuti
     }
+    var miseccaricopiare = '<div class="drop"><i class="fa fa-sort-desc" aria-hidden="true"></i></div>';
+    var miseccaricopiare2 = '<div class="mutendina"><ul><li>info message</li><li>delete message</li></ul></div>';
+
     var messageTime = time.getHours() + ":" + minuti
     var newMessage = $(".sendMessage input").val();
     if ($(".sendMessage input").val() != "" && x.which == 13) {
-      $(".chatActive").append('<div class="containermessage userMessage"><div class="message"><p>' + newMessage + '</p><p>'+ messageTime + '</p></div></div>');
+      $(".right-chat.chatactive").append('<div class="containermessage userMessage"><div class="message"><p>' + newMessage + '</p><p>'+ messageTime + '</p>'+ miseccaricopiare + miseccaricopiare2 +'</div></div>');
       setTimeout(function(){          //aggiunta reazione automatica
-        $(".chatActive").append('<div class="containermessage friendMessage"><div class="message"><p> ok </p><p>'+ messageTime + '</p></div></div>');
+        $(".right-chat.chatactive").append('<div class="containermessage friendMessage"><div class="message"><p> ok </p><p>'+ messageTime + '</p>'+ miseccaricopiare + miseccaricopiare2 +'</div></div>');
       },1000);
       newMessage = "";
       $(".sendMessage input").val("");
@@ -59,5 +64,32 @@ $(document).ready(function(){
     })
   })
   //fine funzione search
+  // funzione mutendina + funzione delete
 
-})
+  $(".right-chat").on("click", ".drop", function(event){
+    $(this).siblings(".mutendina").show();
+    event.stopPropagation()
+  });
+  $(document).click(function(){
+    $(".mutendina").hide()
+  })
+  $(".right-chat").on("click", "li:nth-child(2)", function(event){
+    $(this).parent().parent().parent().parent().html("");
+  });
+  //fine funzione mutendina e delete
+  //switch chat
+  $(".chat").click(function(){
+    var chatList = $(".chat");
+    var thichatlist = $(this);
+    var rightchatlist = $(".right-chat");
+    chatList.removeClass("active");
+    $(this).addClass("active");
+    rightchatlist.removeClass("chatactive")
+    rightchatlist.each(function(){
+      if (thichatlist.data("numerocell") == $(this).data("numerocell")) {
+        $(this).addClass("chatactive");
+      };
+    });
+  });
+  //fine switch
+});
