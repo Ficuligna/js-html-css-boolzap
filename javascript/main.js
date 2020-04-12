@@ -36,13 +36,15 @@ $(document).ready(function(){
     }
     var miseccaricopiare = '<div class="drop"><i class="fa fa-sort-desc" aria-hidden="true"></i></div>';
     var miseccaricopiare2 = '<div class="mutendina"><ul><li>info message</li><li>delete message</li></ul></div>';
-
-    var messageTime = time.getHours() + ":" + minuti
+    var messageTime = time.getHours() + ":" + minuti;
     var newMessage = $(".sendMessage input").val();
     if ($(".sendMessage input").val() != "" && x.which == 13) {
       $(".right-chat.chatactive").append('<div class="containermessage userMessage"><div class="message"><p>' + newMessage + '</p><p>'+ messageTime + '</p>'+ miseccaricopiare + miseccaricopiare2 +'</div></div>');
+      $(".friendAccount p:nth-child(2)").text("Sta scrivendo...")
       setTimeout(function(){          //aggiunta reazione automatica
         $(".right-chat.chatactive").append('<div class="containermessage friendMessage"><div class="message"><p> ok </p><p>'+ messageTime + '</p>'+ miseccaricopiare + miseccaricopiare2 +'</div></div>');
+        $(".friendAccount p:nth-child(3)").text(messageTime);
+        $(".friendAccount p:nth-child(2)").text("Ultimo accesso alle ore")
       },1000);
       newMessage = "";
       $(".sendMessage input").val("");
@@ -80,16 +82,27 @@ $(document).ready(function(){
   //switch chat
   $(".chat").click(function(){
     var chatList = $(".chat");
-    var thichatlist = $(this);
+    var thischatlist = $(this);
     var rightchatlist = $(".right-chat");
     chatList.removeClass("active");
     $(this).addClass("active");
+    var mainChatName = $(this).find("h2").text();
+    var mainChatImage = $(this).find("img").attr("src");
+    $(".friendAccount img").attr("src", mainChatImage);
+    $(".friendAccount h3").text(mainChatName);
     rightchatlist.removeClass("chatactive")
     rightchatlist.each(function(){
-      if (thichatlist.data("numerocell") == $(this).data("numerocell")) {
+      if (thischatlist.data("numerocell") == $(this).data("numerocell")) {
         $(this).addClass("chatactive");
       };
     });
   });
   //fine switch
+  //Ora e attività chat dinamica
+
+
+
+
+
+
 });
