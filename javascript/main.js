@@ -41,6 +41,7 @@ $(document).ready(function(){
     if ($(".sendMessage input").val() != "" && x.which == 13) {
       $(".right-chat.chatactive").append('<div class="containermessage userMessage"><div class="message"><p>' + newMessage + '</p><p>'+ messageTime + '</p>'+ miseccaricopiare + miseccaricopiare2 +'</div></div>');
       $(".friendAccount p:nth-child(2)").text("Sta scrivendo...")
+      $(".friendAccount p:nth-child(3)").text("");
       setTimeout(function(){          //aggiunta reazione automatica
         $(".right-chat.chatactive").append('<div class="containermessage friendMessage"><div class="message"><p> ok </p><p>'+ messageTime + '</p>'+ miseccaricopiare + miseccaricopiare2 +'</div></div>');
         $(".friendAccount p:nth-child(3)").text(messageTime);
@@ -76,7 +77,7 @@ $(document).ready(function(){
     $(".mutendina").hide()
   })
   $(".right-chat").on("click", "li:nth-child(2)", function(event){
-    $(this).parent().parent().parent().parent().html("");
+    $(this).parent().parent().parent().parent().remove();
   });
   //fine funzione mutendina e delete
   //switch chat
