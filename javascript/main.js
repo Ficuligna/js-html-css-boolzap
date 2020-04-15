@@ -18,10 +18,30 @@ $(document).ready(function(){
     var miseccaricopiare2 = '<div class="mutendina"><ul><li>info message</li><li>delete message</li></ul></div>';
     var messageTime = time.getHours() + ":" + minuti
     var newMessage = $(".sendMessage input").val();
+    //attenzione non ci credo funziona
+    var source = $("giacomino-template").html();
+    var template = Handlebars.compile(source);
+    var modifica = {
+     "altra": userMessage,
+     "newMessage": newMessage,
+     "messageTime": messageTime,
+     "miseccaricopiare":miseccaricopiare,
+     "miseccaricopiare2": miseccaricopiare2
+    }
+    var modifica2 = {
+     "altra": friendMessage,
+     "newMessage": newMessage,
+     "messageTime": messageTime,
+     "miseccaricopiare":miseccaricopiare,
+     "miseccaricopiare2": miseccaricopiare2
+    }
+    var html = template(modifica);
+    var html2 = template(modifica2);
     if ($(".sendMessage input").val() != "") {
-      $(".right-chat.chatactive").append('<div class="containermessage userMessage"><div class="message"><p>' + newMessage + '</p><p>'+ messageTime + '</p>'+ miseccaricopiare + miseccaricopiare2 +'</div></div>');
+      $(".right-chat.chatactive").append(html);
       setTimeout(function(){          //aggiunta reazione automatica
-        $(".right-chat.chatactive").append('<div class="containermessage friendMessage"><div class="message"><p> ok </p><p>'+ messageTime + '</p>' + miseccaricopiare + miseccaricopiare2 +'</div></div>');
+
+        $(".right-chat.chatactive").append(html2);
       },1000);
       $("#SendOrRec").html('<i class="fa fa-microphone" aria-hidden="true"></i>')
       newMessage = "";
